@@ -1,0 +1,21 @@
+#include <Servo.h>
+Servo myservo;
+int angle = 0;
+int angleStep =50;
+
+void setup() { 
+  myservo.attach(8);
+  pinMode(2,INPUT_PULLUP);
+  //Serial.begin(9600);
+}
+
+void loop() {
+
+int sensorValue = analogRead(A0);
+if (sensorValue <200){
+myservo.write(-120);
+  }
+  else {
+  myservo.write(120);
+  }
+}
